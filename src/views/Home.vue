@@ -1,48 +1,12 @@
 <template>
   <section class="home">
     <ul>
-      <li v-for="select in species" :key="select.name" v-on:click="getSpeciesFocused(select.url)">Click on me : {{
-        select.name
-        }}
+      <li v-for="select in species" :key="select.name">
+        <router-link :to="{ path: '/species/'+ select.url}">
+          <a>{{ select.name }}</a>
+        </router-link>
       </li>
     </ul>
-
-    <article v-if="speciesFocused.length">
-      <div v-for="species in speciesFocused" :key="species.name">
-        Species :
-
-        <ul>
-          <li>
-            Name : {{ species.name }}
-          </li>
-          <li>
-            description : {{ species.description }}
-          </li>
-          <li>
-            status : {{ species.status }}
-          </li>
-          <li>
-            population : {{ species.population }}
-          </li>
-          <li>
-            scientific_name : {{ species.scientific_name }}
-          </li>
-          <li>
-            location : {{ species.location }}
-          </li>
-          <li>
-            habitat : {{ species.habitat }}
-          </li>
-          <li>
-            status_legend : {{ species.status_legend }}
-          </li>
-          <li>
-            <img v-bind:src="species.image.url" alt="species.image.url">
-          </li>
-        </ul>
-      </div>
-
-    </article>
   </section>
 </template>
 
@@ -64,10 +28,6 @@
       async getAllSpecies() {
         this.species = await bloowatchService.getAllSpecies()
         console.log(this.species)
-      },
-      async getSpeciesFocused(name) {
-        this.speciesFocused = await bloowatchService.getSpeciesFocused(name)
-        console.log(this.speciesFocused)
       }
     },
     created() {
