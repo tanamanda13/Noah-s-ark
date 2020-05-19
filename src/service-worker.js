@@ -94,3 +94,19 @@ workbox.routing.registerRoute(
     ]
   })
 )
+// eslint-disable-next-line no-undef 
+workbox.routing.registerRoute(
+  new RegExp('https://fonts.(?:googleapies|gstatic).com/(.*)'),
+  // eslint-disable-next-line no-undef 
+	new workbox.strategies.CacheFirst({
+		cacheName: 'googleapis',
+		method: 'GET',
+		cacheableResponse: { statuses: [0, 200] },
+		plugins: [
+      // eslint-disable-next-line no-undef 
+			new workbox.expiration.Plugin({
+				maxEntries: 30
+			})
+		]
+	})
+)
