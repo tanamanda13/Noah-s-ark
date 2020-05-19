@@ -5,7 +5,7 @@
     </div>
     <main>
       <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua dkhlskhhsg</p>
-      <router-link to="/list"><button>Decouvrir des animaux</button></router-link>
+      <router-link to="/list"><div class="button">Decouvrir des animaux</div></router-link>
     </main>
     
    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/>-->
@@ -24,44 +24,44 @@
 }*/
 </script>
 <style scoped>
-body{
- margin: 0;
-  width: 100vw;
-  height:100vh;
-  display: flex;
+
+.home{
+  display:flex;
   flex-direction:column;
-  align-items: center;
+  align-items:center;
 }
 
-.intro{
-  background-color:#062F11;
-  width: 100vw;
-  height:100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;  
+
+.intro p{  
 }
 
-.home .intro p{
-  color: #fff;
-  font-family: sans-serif;
-  font-size: 6vw;
+.button{
+  width:300px;
+  text-decoration:none;
 }
 
-.home main{
-  width:100vw;
-  max-width:1440px;
-  display: flex;
+
+main{
+  margin-top: -35vh;
+  display:flex;
   flex-direction:column;
-  align-items: center;
-  margin-bottom: 5.5vw;
-
+  align-items:center;
 }
 
-.home main p{
-  width:90vw;
+main p{
+  width:90%;
   text-align: center;
-  font-size: 40px;
+  font-size: 35px;
+  font-weight:bold;
+  padding:2vw;
+  
+}
+@media only screen and (max-width: 600px) {
+  .home main p{
+    font-size: 20px;
+    line-height:25px;
+    padding:4%;
+  }
 }
 
 

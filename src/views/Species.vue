@@ -1,38 +1,34 @@
 <template>
   <section class="species">
-    <article v-if="speciesFocused.length">
-      <div v-for="species in speciesFocused" :key="species.name">
-        Species :
 
-        <ul>
-          <li>
-            Name : {{ species.name }}
-          </li>
-          <li>
-            description : {{ species.description }}
-          </li>
-          <li>
-            status : {{ species.status }}
-          </li>
-          <li>
-            population : {{ species.population }}
-          </li>
-          <li>
-            scientific_name : {{ species.scientific_name }}
-          </li>
-          <li>
-            location : {{ species.location }}
-          </li>
-          <li>
-            habitat : {{ species.habitat }}
-          </li>
-          <li>
-            status_legend : {{ species.status_legend }}
-          </li>
-          <li>
-            <img v-bind:src="species.image.url" alt="species.image.url">
-          </li>
-        </ul>
+   
+    
+    <article v-if="speciesFocused.length">
+     
+      <div v-for="species in speciesFocused" :key="species.name">
+     
+      <div class="intro">
+
+       <router-link to="/list"><div class="back">Back</div></router-link>
+      
+      <span class="status__span">{{ species.status }}</span>
+        <div class="status">{{ species.population }} population</div>
+        
+        
+        <p>{{ species.name }}<br><span>{{species.scientific_name}}</span></p>
+      </div>
+      <main>
+
+        
+        <div class="imageWrapper">
+          <img v-bind:src="species.image.url" alt="species.image.url">
+        </div>
+        <p>{{ species.location }}</p>
+        <p>{{ species.habitat }}</p>
+        <p class="description">{{ species.description }}</p>
+
+      </main>
+        
       </div>
 
     </article>
@@ -64,3 +60,94 @@
     }
   }
 </script>
+<style scoped>
+
+img{
+  max-width:70%;
+  max-width:70%;
+}
+
+.description{
+  font-size:25px;
+  line-height:30px;
+  font-weight:bold;
+  width:90%;
+  margin-left:5%;
+}
+
+.status{
+  background-color:#fff;
+  border-radius:30vw;
+  font-weight:bold;
+  padding:10px;
+  font-size:17px;
+  margin-top:2vw;
+  margin-right:2vw;
+  display:flex;
+  width:60%;
+  
+  position:relative;
+  max-width:300px;
+}
+
+.status__span{
+  color:#fff;
+  font-weight:bold;
+  margin-top:20px;
+}
+
+.status::before{
+  background-color:red;
+  border-radius:50%;
+  width:30px;
+  height:30px;
+  display:block;
+  content:"";
+  left:10px;
+  top:7px;
+  position:absolute;
+}
+ 
+
+.species article div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.imageWrapper{
+  background-color:green;
+  padding:2vw;
+  transition:all 1s;
+  position:relative;
+}
+
+.imageWrapper:hover{
+  background-color:#000;
+}
+
+.imageWrapper:hover:after{
+  content:"La trist preview du futur";
+  font-size:30px;
+  color:#fff;
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+
+main {
+  margin-top: -60vh;
+}
+
+.intro p {
+  margin:0;
+  margin-top:10vh;
+}
+.intro span {
+  font-size:17px;
+}
+
+
+
+</style>

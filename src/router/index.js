@@ -12,6 +12,10 @@ Vue.use(VueRouter)
     component: Home
   },
   {
+    path: 'http://www.bloowatch.org/images/:slug',
+    // name: 'http://www.bloowatch.org/images/',
+  },
+  {
     path: '/species/:id',
     name: 'Species',
     component: Species
@@ -27,8 +31,6 @@ Vue.use(VueRouter)
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
   routes
 })
 
