@@ -9,7 +9,7 @@
      
       <div class="intro">
 
-       <div class="back">Back</div>
+       <router-link to="/list"><div class="back">Back</div></router-link>
       
       <span class="status__span">{{ species.status }}</span>
         <div class="status">{{ species.population }} population</div>
@@ -61,28 +61,10 @@
   }
 </script>
 <style scoped>
-html{
-
-  background-color: #062F11;
-}
-body{
- margin: 0!important;
-  width: 100vw;
-  height:100vh;
-  display: flex;
-  flex-direction:column;
-  align-items: center;
-}
-.intro {
-  background-color: #062F11;
-  width: 100vw;
-  height: 100vh;
-
-}
 
 img{
-  width:100%;
-  max-width:500px;
+  max-width:70%;
+  max-width:70%;
 }
 
 .description{
@@ -136,27 +118,29 @@ img{
 .imageWrapper{
   background-color:green;
   padding:2vw;
+  transition:all 1s;
+  position:relative;
 }
 
-main {
-  width: 100vw;
-  max-width: 1440px;
-  margin-bottom: 5.5vw;
-  padding: 2vw;
+.imageWrapper:hover{
+  background-color:#000;
+}
 
+.imageWrapper:hover:after{
+  content:"La trist preview du futur";
+  font-size:30px;
+  color:#fff;
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+
+main {
   margin-top: -60vh;
-  background-color: #fff;
-  width: 90vw;
-  max-width: 1200px;
-  }
+}
 
 .intro p {
-  color: #fff;
-  font-family: sans-serif;
-  font-size: 40px;
-  line-height: 35px;
-  text-align: center;
-  padding:0px;
   margin:0;
   margin-top:10vh;
 }
@@ -164,15 +148,6 @@ main {
   font-size:17px;
 }
 
-.back{
-  background-color:#fff;
-  border-radius:20vw;
-  padding:0.5vw 1vw;
-  position:absolute;
-  left:3vw;
-  top:3vw;
-
-}
 
 
 </style>

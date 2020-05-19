@@ -1,12 +1,12 @@
 <template>
   <div class="list">
     <div class="intro">
-    <div class="back">Back</div>
+    <router-link to="/"><div class="back">Back</div></router-link>
       <p>Une terre sans des animaux<br><span>Une list des animau menace</span></p>
     </div>
     <main>
       <div class="wrapper__button">
-        <button>Alert pour news</button>
+        <div class="button">Alert pour news</div>
       </div>
       <div class="list__headline">
         <p>Au revoir</p>
@@ -16,7 +16,7 @@
       <article class="wrapper__list" >
         <div class="wrapper__list__elmenet"  v-for="select in species" :key="select.image.url">
           <router-link :to="{ path: '/species/'+ select.url}">
-          <a class="link--article"><img v-bind:src="select.image.url" v-bind:alt="select.image.url"></a>
+            <a class="link--article"><img v-bind:src="select.image.url" v-bind:alt="select.image.url"></a>
           </router-link>
         </div>
       </article>
@@ -28,10 +28,6 @@
 
 <style scoped>
 
-  img{
-    width:100%;
-    max-height:70%;
-  }
 
   .link--article{
     padding:5%;
@@ -40,6 +36,7 @@
     justify-content:center;
     align-items:center;
   }
+
 
 
   .list {
@@ -51,9 +48,9 @@
 
   .list__headline {
     text-align-last: left;
-    font-family: sans-serif;
     line-height: 3vw;
     margin-top: 2vw;
+    
 
   }
 
@@ -62,24 +59,16 @@
     font-size: 20px;
     padding: 0;
     margin: 0;
-
   }
 
 
   main {
-    width: 100vw;
-    max-width: 1440px;
-    margin-bottom: 5.5vw;
-    padding: 2vw;
-
     margin-top: -40vh;
-    background-color: #fff;
-    width: 90vw;
-    max-width: 1200px;
   }
 
   .wrapper__button {
     width: 100%;
+    max-width:1440px;
     display: flex;
     justify-content: flex-end;
 
@@ -98,6 +87,22 @@
     height: 200px;
     background-color: green;
     margin-bottom: 20px;
+    position:relative;
+    transition: all 0.5s;
+    
+  }
+
+  .wrapper__list__elmenet:hover{
+    background-color: #062F11;;
+  }
+
+  img{
+    max-width:70%;
+    max-height:70%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translateX(-50%)translateY(-50%);
   }
 
   @media only screen and (max-width: 600px) {
@@ -106,43 +111,6 @@
     }
   }
 
-  .intro {
-    background-color: #062F11;
-    width: 100vw;
-    height: 100vh;
-
-  }
-
-  .intro p {
-    color: #fff;
-    font-family: sans-serif;
-    font-size: 40px;
-  line-height: 40px;
-    text-align: center;
-    margin-top: 30vh;
-  }
-
-  .intro span {
-    font-size: 3vw;
-  }
-
-  button {
-    background-color: #062F11;
-    color: #fff;
-    padding: 20px;
-    border-radius: 50px;
-    font-size: 20px;
-  }
-
-  .back{
-  background-color:#fff;
-  border-radius:20vw;
-  padding:0.5vw 1vw;
-  position:absolute;
-  left:3vw;
-  top:3vw;
-
-}
 
 </style>
 

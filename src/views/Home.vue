@@ -5,7 +5,7 @@
     </div>
     <main>
       <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua dkhlskhhsg</p>
-      <router-link to="/list"><button>Decouvrir des animaux</button></router-link>
+      <router-link to="/list"><div class="button">Decouvrir des animaux</div></router-link>
     </main>
     
    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/>-->
@@ -24,60 +24,31 @@
 }*/
 </script>
 <style scoped>
-body{
- margin: 0;
-  width: 100vw;
-  height:100vh;
-  display: flex;
-  flex-direction:column;
-  align-items: center;
-}
+
 .home{
   display:flex;
   flex-direction:column;
   align-items:center;
 }
 
-.intro{
-  background-color:#062F11;
-  width: 100vw;
-  height:100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;  
+
+.intro p{  
 }
 
-.home .intro p{
-  color: #fff;
-  font-family: sans-serif;
-  font-size: 35px;
-  line-height: 40px;
+.button{
+  width:300px;
+  text-decoration:none;
 }
 
-button {
-  background-color: #062F11;
-  color: #fff;
-  padding: 20px;
-  border-radius: 50px;
-  font-size: 20px;
-}
 
-.home main{
-  width:100vw;
-  max-width:1440px;
-  display: flex;
+main{
+  margin-top: -35vh;
+  display:flex;
   flex-direction:column;
-  align-items: center;
-  margin-bottom: 5.5vw;
-
-  margin-top: -15vh;
-  background-color: #fff;
-  width: 90vw;
-  max-width: 1200px;
-
+  align-items:center;
 }
 
-.home main p{
+main p{
   width:90%;
   text-align: center;
   font-size: 35px;
