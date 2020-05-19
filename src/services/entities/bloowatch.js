@@ -5,7 +5,7 @@ const axios = require('axios').default;
  * http://www.bloowatch.org/developers/api
  */
 export default class BloowatchService {
-  bloowatchUrl = 'http://www.bloowatch.org/developers';
+  bloowatchUrl = 'https://marta-space-api.herokuapp.com';
   bloowatchUrlImage = 'http://www.bloowatch.org';
 
   /**
@@ -14,7 +14,7 @@ export default class BloowatchService {
    */
   async getAllSpecies() {
     try {
-      const species = await axios.get(this.bloowatchUrl + '/json/species')
+      const species = await axios.get(this.bloowatchUrl + '/api/species')
       return await this.getImageUrl(species.data.allSpecies);
     } catch (err) {
       console.log(err);
@@ -28,7 +28,7 @@ export default class BloowatchService {
    */
   async getSpeciesFocused(name) {
     try {
-      const species = await axios.get(this.bloowatchUrl + `/json/species/${name}`)
+      const species = await axios.get(this.bloowatchUrl + `/api/species/${name}`)
       return await this.getImageUrl(species.data.species);
     } catch (err) {
       console.log(err);
