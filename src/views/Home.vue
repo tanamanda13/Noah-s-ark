@@ -32,6 +32,11 @@ body{
   flex-direction:column;
   align-items: center;
 }
+.home{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
 
 .intro{
   background-color:#062F11;
@@ -45,7 +50,16 @@ body{
 .home .intro p{
   color: #fff;
   font-family: sans-serif;
-  font-size: 6vw;
+  font-size: 35px;
+  line-height: 40px;
+}
+
+button {
+  background-color: #062F11;
+  color: #fff;
+  padding: 20px;
+  border-radius: 50px;
+  font-size: 20px;
 }
 
 .home main{
@@ -56,12 +70,27 @@ body{
   align-items: center;
   margin-bottom: 5.5vw;
 
+  margin-top: -15vh;
+  background-color: #fff;
+  width: 90vw;
+  max-width: 1200px;
+
 }
 
 .home main p{
-  width:90vw;
+  width:90%;
   text-align: center;
-  font-size: 40px;
+  font-size: 35px;
+  font-weight:bold;
+  padding:2vw;
+  
+}
+@media only screen and (max-width: 600px) {
+  .home main p{
+    font-size: 20px;
+    line-height:25px;
+    padding:4%;
+  }
 }
 
 

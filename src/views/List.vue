@@ -1,21 +1,22 @@
 <template>
   <div class="list">
     <div class="intro">
+    <div class="back">Back</div>
       <p>Une terre sans des animaux<br><span>Une list des animau menace</span></p>
     </div>
     <main>
       <div class="wrapper__button">
-        <button>Decouvrir des animaux</button>
+        <button>Alert pour news</button>
       </div>
       <div class="list__headline">
         <p>Au revoir</p>
         <h2>Tous nos candidates</h2>
       </div>
 
-      <article class="wrapper__list"  v-for="select in species" :key="select.name">
-        <div class="wrapper__list__elmenet">
+      <article class="wrapper__list" >
+        <div class="wrapper__list__elmenet"  v-for="select in species" :key="select.image.url">
           <router-link :to="{ path: '/species/'+ select.url}">
-          <a>{{ select.name }}</a>
+          <a class="link--article"><img v-bind:src="select.image.url" v-bind:alt="select.image.url"></a>
           </router-link>
         </div>
       </article>
@@ -26,6 +27,19 @@
 </template>
 
 <style scoped>
+
+  img{
+    width:100%;
+    max-height:70%;
+  }
+
+  .link--article{
+    padding:5%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
 
 
   .list {
@@ -44,10 +58,11 @@
   }
 
   .list__headline p, h2 {
-    line-height: 3vw;
+    line-height: 20px;
+    font-size: 20px;
     padding: 0;
     margin: 0;
-    font-size: 3vw;
+
   }
 
 
@@ -101,8 +116,8 @@
   .intro p {
     color: #fff;
     font-family: sans-serif;
-    font-size: 6vw;
-    line-height: 3.5vw;
+    font-size: 40px;
+  line-height: 40px;
     text-align: center;
     margin-top: 30vh;
   }
@@ -118,6 +133,16 @@
     border-radius: 50px;
     font-size: 20px;
   }
+
+  .back{
+  background-color:#fff;
+  border-radius:20vw;
+  padding:0.5vw 1vw;
+  position:absolute;
+  left:3vw;
+  top:3vw;
+
+}
 
 </style>
 
