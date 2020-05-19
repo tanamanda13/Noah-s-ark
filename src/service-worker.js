@@ -94,3 +94,47 @@ workbox.routing.registerRoute(
     ]
   })
 )
+
+// let clickUrl
+
+// event push n'est pas dans le DOm
+// il s'active que ors que l'api notification ok
+// notre service worker est comme un api (sur lequel on fait une requete)
+
+// récupe notif de la part d'un serveur
+self.addEventListener('push', (event) => {
+  // console.log(event.data.text());
+  let pushMessage = event.data.text();
+  // on aurait pu json()
+
+  // Option notification
+  const options = {
+    // body = message de la notif
+    body: pushMessage,
+    // basé du dossier public
+    icon: './img/safari-pinned-tab.svg',
+    image: './img/safari-pinned-tab.svg',
+    vibrate: [200, 100, 200, 100],
+    tag: 'vibration-sample'
+  }
+
+  //permet qu'une fois la notif recu, cela va lancé le code pour affiché une notif
+  event.waitUntil(
+    self.registration.showNotification(pushMessage, options)
+  )
+})
+
+self.addEventListener('notificationclick', (event) => {
+  // lsqon click sur la notifi, il se passe qqch
+
+  // on la ferme
+  event.notification.close()
+
+  // rediriger vers un nouvel url
+  // redirection au niveau serviceWorker. il faut utiliser clients
+  const promiseChain = clients.openWindow('http://127.0.0.1:8887/')
+
+  event.waitUntil(
+    promiseChain
+  )
+})
