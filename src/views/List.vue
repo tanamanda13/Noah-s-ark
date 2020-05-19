@@ -2,12 +2,10 @@
   <div class="list">
     <div class="intro">
     <router-link to="/"><div class="back">Back</div></router-link>
-      <p>Une terre sans des animaux<br><span>Une list des animau menace</span></p>
+      <!--<p>Une terre sans des animaux<br><span>Une list des animau menace</span></p>-->
     </div>
     <main>
-      <div class="wrapper__button">
-        <div class="button">Alert pour news</div>
-      </div>
+     
       <div class="list__headline">
         <p>Au revoir</p>
         <h2>Tous nos candidates</h2>
@@ -63,16 +61,10 @@
 
 
   main {
-    margin-top: -40vh;
+    margin-top: -80vh;
   }
 
-  .wrapper__button {
-    width: 100%;
-    max-width:1440px;
-    display: flex;
-    justify-content: flex-end;
 
-  }
 
   .wrapper__list {
     margin-top: 20px;
