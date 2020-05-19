@@ -12,6 +12,10 @@ Vue.use(VueRouter)
     component: Home
   },
   {
+    path: 'http://www.bloowatch.org/images/:slug',
+    name: 'http://www.bloowatch.org/images/',
+  },
+  {
     path: '/species/:id',
     name: 'Species',
     component: Species
