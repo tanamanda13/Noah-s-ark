@@ -15,9 +15,10 @@
   }
 
   main {
+    box-sizing: border-box;
     max-width: 1440px;
     margin-bottom: 5.5vw;
-    padding: 2vw;
+    padding: 15px;
     background-color: #fff;
     width: 90vw;
     max-width: 1200px;
@@ -49,7 +50,7 @@
   .button {
     background-color: #062F11;
     color: #fff;
-    padding: 20px;
+    padding: 15px 20px;
     border-radius: 50px;
     font-size: 20px;
     cursor:pointer;
@@ -66,7 +67,7 @@
   .back{
     background-color:#fff;
     border-radius:20vw;
-    padding:0.5vw 1vw;
+    padding:5px 10px;
     position:absolute;
     left:3vw;
     top:3vw;

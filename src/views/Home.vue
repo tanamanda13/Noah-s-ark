@@ -1,12 +1,13 @@
 <template>
   <div class="home">
     <div class="intro">
-      <p>Une terre sans des animaux </p>
+      <div class="intro__text">
+        <p>Une terre sans des animaux </p>
+        <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua dkhlskhhsg</span>
+        <router-link to="/list"><div class="button">Decouvrir des animaux</div></router-link>
+      </div> 
     </div>
-    <main>
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua dkhlskhhsg</p>
-      <router-link to="/list"><div class="button">Decouvrir des animaux</div></router-link>
-    </main>
+
     
    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/>-->
   </div>
@@ -32,12 +33,35 @@
 }
 
 
-.intro p{  
+.intro span{  
+  color:#fff;
+  margin-bottom:50px;
+  font-family:sans-serif;
+  line-height:25px;
+  font-size:20px;
+
 }
 
 .button{
-  width:300px;
   text-decoration:none;
+  background-color:#fff;
+  color:#062F11;
+}
+
+
+.intro{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.intro__text{
+  width:80vw;
+  max-width:600px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
 }
 
 
