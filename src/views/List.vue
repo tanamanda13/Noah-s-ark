@@ -2,7 +2,6 @@
   <div class="list">
     <div class="intro">
     <router-link to="/"><div class="back">Back</div></router-link>
-      <!--<p>Une terre sans des animaux<br><span>Une list des animau menace</span></p>-->
     </div>
     <main>
      

@@ -13,7 +13,6 @@ Vue.use(VueRouter)
   },
   {
     path: 'http://www.bloowatch.org/images/:slug',
-    // name: 'http://www.bloowatch.org/images/',
   },
   {
     path: 'img/icons/:slug',
