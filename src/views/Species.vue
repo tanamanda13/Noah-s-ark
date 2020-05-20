@@ -32,7 +32,7 @@
         <p>{{ species.habitat }}</p>
         <p class="description">{{ species.description }}</p>
          <div class="wrapper__button">
-          <div class="button">Abonne toi du {{ species.name }}</div>
+          <div class="button">Follow the {{ species.name }}</div>
         </div>
       </main>
         
@@ -195,7 +195,7 @@ main{
 }
 
 .imageWrapper:hover:after{
-  content:"La trist preview du futur";
+  content:"A dark future";
   font-size:30px;
   color:#fff;
   position:absolute;

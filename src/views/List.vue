@@ -7,8 +7,8 @@
     <main>
      
       <div class="list__headline">
-        <p>Au revoir</p>
-        <h2>Tous nos candidates</h2>
+        <p>Don't let them disappear</p>
+        <h2>Animals in danger</h2>
       </div>
 
       <article class="wrapper__list" >
