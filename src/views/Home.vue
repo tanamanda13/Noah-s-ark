@@ -2,7 +2,7 @@
   <div class="home">
     <div class="intro">
       <div class="intro__text">
-        <p>A FUTURE WITHOUT ANIMALS ?</p>
+        <p>A future without animals ?</p>
         <span>Half the number of animals on the planet in 40 years: this is the alarmist observation of the 2018 report from the World Wildlife Fund. Let’s act before it’s too late.</span>
         <router-link to="/list"><div class="button">Discover animals in danger</div></router-link>
       </div> 
