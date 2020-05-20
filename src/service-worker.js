@@ -39,7 +39,6 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
 
   new RegExp(`/species/(.*)`),
-  // stratégie de mise en cache. Exemple avec CacheFirst
   // eslint-disable-next-line no-undef 
   new workbox.strategies.CacheFirst({
     cacheName: 'species',
