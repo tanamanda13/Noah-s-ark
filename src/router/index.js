@@ -16,6 +16,9 @@ Vue.use(VueRouter)
     // name: 'http://www.bloowatch.org/images/',
   },
   {
+    path: 'img/icons/:slug',
+  },
+  {
     path: '/species/:id',
     name: 'Species',
     component: Species
